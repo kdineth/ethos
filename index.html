@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethos | Enterprise Agentic Governance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --ice-blue: #f0f9ff;
+            --ios-blur: rgba(255, 255, 255, 0.7);
+            --accent-blue: #007AFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfdfd;
+            color: #1d1d1f;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            background: var(--ios-blur);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .ios-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .ios-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .ice-gradient {
+            background: radial-gradient(circle at 50% 50%, #e0f2fe 0%, #fdfdfd 100%);
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .step-active {
+            border-color: var(--accent-blue);
+            background-color: #eff6ff;
+            color: var(--accent-blue);
+        }
+
+        .demo-window {
+            height: 400px;
+            overflow: hidden;
+        }
+
+        /* iOS-like Button */
+        .btn-ios {
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 14px;
+            padding: 12px 24px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-ios:active {
+            transform: scale(0.96);
+            opacity: 0.9;
+        }
+
+        .text-ios-secondary {
+            color: #86868b;
+        }
+
+        .mesh-bg {
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(202,100%,91%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(188,100%,93%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(204,100%,91%,1) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="mesh-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-2.5">
+                <div class="w-9 h-9 bg-[#007AFF] rounded-[10px] flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <i class="fas fa-shield-halved text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-[#1d1d1f]">Ethos</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-[13px] font-medium text-[#1d1d1f]">
+                <a href="#demo" class="hover:text-[#007AFF] transition-colors">Explorable Demo</a>
+                <a href="#vision" class="hover:text-[#007AFF] transition-colors">Vision</a>
+                <a href="#tech" class="hover:text-[#007AFF] transition-colors">Architecture</a>
+            </div>
+            <button class="btn-ios text-[13px] !py-2 !px-5">Connect with Us</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[12px] font-bold tracking-wide uppercase mb-8">
+                Enterprise Agentic Security
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-[#1d1d1f] mb-8 leading-[1.1]">
+                Governance for the <br><span class="text-[#007AFF]">Agentic Enterprise.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-[#86868b] mb-12 max-w-2xl mx-auto leading-relaxed font-normal">
+                Ethos bridges the intent gap in AI ecosystems. We provide the <strong>Integrity Layer</strong> for WSO2 Agent IDs, ensuring autonomous actions align with enterprise values.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button class="btn-ios text-lg px-10 py-4 shadow-xl shadow-blue-500/10">Launch Interactive Demo</button>
+                <button class="bg-[#f5f5f7] text-[#1d1d1f] rounded-[14px] px-10 py-4 font-semibold text-lg hover:bg-gray-200 transition-colors">Read One-Pager</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="py-24 px-6 bg-[#f5f5f7]/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How Ethos Secures an Agent</h2>
+                <p class="text-ios-secondary">Explore the step-by-step interception of a rogue AI intent.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8">
+                <!-- Navigation Steps -->
+                <div class="lg:col-span-4 space-y-3">
+                    <button onclick="setDemoStep(1)" id="step1" class="demo-step w-full text-left p-5 ios-card step-active flex gap-4 items-center">
+                        <span class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm">1</span>
+                        <div>
+                            <p class="font-bold text-sm">Agent Initiation</p>
+                            <p class="text-[11px] opacity-70">Identity recognized by WSO2</p>
+                        </div>
+                    </button>
+                    <button onclick="setDemoStep(2)" id="step2" class="demo-step w-full text-left p-5 ios-card flex gap-4 items-center">
+                        <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center font-bold text-sm">2</span>
+                        <div>
+                            <p class="font-bold text-sm">Gateway Interception</p>
+                            <p class="text-[11px] opacity-70">Ballerina Interceptor pauses request</p>
+                        </div>
+                    </button>
+                    <button onclick="setDemoStep(3)" id="step3" class="demo-step w-full text-left p-5 ios-card flex gap-4 items-center">
+                        <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center font-bold text-sm">3</span>
+                        <div>
+                            <p class="font-bold text-sm">Behavioral Analysis</p>
+                            <p class="text-[11px] opacity-70">Auditing intent vs. corporate policy</p>
+                        </div>
+                    </button>
+                    <button onclick="setDemoStep(4)" id="step4" class="demo-step w-full text-left p-5 ios-card flex gap-4 items-center">
+                        <span class="w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center font-bold text-sm">4</span>
+                        <div>
+                            <p class="font-bold text-sm">Outcome Execution</p>
+                            <p class="text-[11px] opacity-70">Blocked, Redacted, or Allowed</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Visual Interface -->
+                <div class="lg:col-span-8 ios-card p-0 overflow-hidden relative min-h-[450px] bg-white border border-gray-100">
+                    <div class="bg-[#f5f5f7] border-b border-gray-100 p-4 flex items-center gap-2">
+                        <div class="flex gap-1.5">
+                            <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+                            <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+                        </div>
+                        <span class="text-[11px] font-medium text-gray-400 mx-auto">Ethos Enterprise Console — Preview</span>
+                    </div>
+
+                    <div id="demoContent" class="p-8 h-full">
+                        <!-- Content will be injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="tech" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8">Trustworthy. <br><span class="text-blue-500">Tech-Savvy.</span> Integrated.</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-500 shrink-0">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Ballerina-Native</h4>
+                                <p class="text-ios-secondary text-sm">Built to extend the WSO2 API Gateway with high-performance interceptors.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-cyan-500 shrink-0">
+                                <i class="fas fa-mask"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">PII Shield</h4>
+                                <p class="text-ios-secondary text-sm">Autonomous masking of NICs and banking details before cloud transmission.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Intent Engines</h4>
+                                <p class="text-ios-secondary text-sm">Moving security from "Is the text safe?" to "Is the business logic correct?"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ios-card bg-slate-900 p-8 shadow-2xl">
+                    <p class="text-cyan-400 mono text-xs mb-4">// ethos_interceptor.bal</p>
+                    <div class="mono text-xs text-slate-400 space-y-1">
+                        <p><span class="text-purple-400">public resource function</span> 'default [string... path]</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;(<span class="text-cyan-400">http:RequestContext</span> ctx, <span class="text-cyan-400">http:Request</span> req) </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">returns</span> http:NextService|error? {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">// Extract Agent context</span></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white">string agentId = req.getHeader("X-AGENT-ID");</span></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">if</span> (!ethos:validateIntent(agentId)) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> error("Ethos: Unauthorized Intent");</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">return</span> ctx.next();</p>
+                        <p>&nbsp;&nbsp;}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-gray-100 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-[#007AFF] rounded-[8px] flex items-center justify-center">
+                    <i class="fas fa-shield-halved text-white text-sm"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight">Ethos</span>
+            </div>
+            <p class="text-[13px] text-ios-secondary">© 2026 Project Ethos. Built for WSO2 Ecosystem.</p>
+            <div class="flex gap-6">
+                <i class="fab fa-twitter text-gray-400 hover:text-[#007AFF] cursor-pointer"></i>
+                <i class="fab fa-linkedin text-gray-400 hover:text-[#007AFF] cursor-pointer"></i>
+                <i class="fab fa-github text-gray-400 hover:text-[#007AFF] cursor-pointer"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const demoSteps = {
+            1: {
+                title: "Step 1: Agent Initiation",
+                description: "The AI Support Agent receives a command to 'Delete User 402' from an unauthorized prompt injection.",
+                icon: "fa-robot",
+                color: "text-blue-500",
+                code: "Agent ID: support_bot_v2\nStatus: AUTHENTICATED\nAction: DELETE /v1/users/402"
+            },
+            2: {
+                title: "Step 2: Gateway Interception",
+                description: "Before the request reaches the API, the Ethos Ballerina Interceptor catches the traffic and holds it.",
+                icon: "fa-bolt",
+                color: "text-cyan-500",
+                code: "[Ethos Gateway]\nInterception Active\nPausing request for intent verification..."
+            },
+            3: {
+                title: "Step 3: Intent Auditing",
+                description: "Ethos analyzes the conversation history. It detects that the 'Delete' command came from a user prompt, not a business rule.",
+                icon: "fa-brain",
+                color: "text-indigo-500",
+                code: "Analyzing Reasoning Path...\nConflict Detected: Support Agent role does not permit data destruction."
+            },
+            4: {
+                title: "Step 4: Outcome & Block",
+                description: "The request is rejected. Ethos sends a governance log to the console and kills the agent's active session.",
+                icon: "fa-times-circle",
+                color: "text-red-500",
+                code: "OUTCOME: REJECTED\nREASON: Policy Violation (Destructive Intent)\nLOG: Reported to Admin Console"
+            }
+        };
+
+        function setDemoStep(step) {
+            // Update Navigation UI
+            document.querySelectorAll('.demo-step').forEach(el => {
+                el.classList.remove('step-active');
+                el.querySelector('span').className = 'w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center font-bold text-sm';
+            });
+            const activeBtn = document.getElementById('step' + step);
+            activeBtn.classList.add('step-active');
+            activeBtn.querySelector('span').className = 'w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm';
+
+            // Update Content UI with animation
+            const content = demoSteps[step];
+            const container = document.getElementById('demoContent');
+            
+            container.style.opacity = '0';
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="flex flex-col h-full animate-fade-in">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="w-16 h-16 rounded-3xl bg-gray-50 flex items-center justify-center ${content.color} text-2xl shadow-sm">
+                                <i class="fas ${content.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">${content.title}</h3>
+                                <p class="text-ios-secondary text-sm max-w-md">${content.description}</p>
+                            </div>
+                        </div>
+                        <div class="flex-grow bg-gray-900 rounded-2xl p-6 mono text-xs text-blue-400 leading-relaxed shadow-inner">
+                            ${content.code.split('\n').map(line => `<div>${line}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+                container.style.opacity = '1';
+            }, 200);
+        }
+
+        // Initialize Demo
+        window.onload = () => setDemoStep(1);
+    </script>
+</body>
+</html>
